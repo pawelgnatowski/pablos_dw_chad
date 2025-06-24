@@ -1,0 +1,272 @@
+/* Base styles for the SQL Config Converter Tool */
+.sql-config-converter-tool {
+    position: fixed;
+    background-color: #2c2c2e; /* Dark background */
+    color: #f2f2f7; /* Light text for elements not specifically styled */
+    border: 1px solid #4a4a4c;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 10001; /* Ensure it's above other content */
+    display: none; /* Hidden by default */
+    width: 90vw; /* Increased width to 90vw */
+    max-width: 90vw; /* Max width also 90vw */
+    min-height: 650px; /* Increased min-height */
+    max-height: 90vh;
+    display: flex; /* Use flex for overall structure */
+    flex-direction: column; /* Stack header, body */
+    font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace; /* Changed base font */
+}
+
+.scc-header {
+    padding: 10px 15px;
+    background-color: #3a3a3c; /* Slightly lighter dark for header */
+    border-bottom: 1px solid #4a4a4c;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; /* Header should not shrink */
+}
+
+.scc-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.scc-close-button {
+    background: none;
+    border: none;
+    color: #f2f2f7 !important; /* Force color with !important */
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.scc-close-button:hover {
+    color: #ff453a !important; /* iOS destructive red for hover */
+    opacity: 1;
+}
+
+/* Feedback button styles */
+.scc-feedback-button {
+    background: none;
+    border: none;
+    color: #f2f2f7 !important; /* Force color with !important */
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 1;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.scc-feedback-button:hover {
+    opacity: 1 !important;
+    color: #ff9f0a !important; /* iOS yellow for hover */
+    transform: scale(1.1);
+}
+
+/* Ensure header buttons are properly spaced */
+.scc-header {
+    padding: 10px 10px 10px 15px;
+}
+
+.scc-header > *:not(:last-child) {
+    margin-right: 5px;
+}
+
+.scc-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Body takes remaining vertical space */
+    overflow-y: auto; /* Allow body to scroll if content overflows */
+    min-height: 0; /* Critical for flex-grow in nested flex containers */
+}
+
+/* Three-column layout */
+.scc-main-layout {
+    display: flex;
+    gap: 15px; /* Space between columns */
+    flex-grow: 1; /* Main layout takes available space in body */
+    min-height: 0; /* Important for flex children to shrink properly */
+}
+
+.scc-left-column, .scc-right-column {
+    flex: 1; /* Each takes equal space initially, can grow/shrink */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Space between form groups within columns */
+    min-width: 0; /* Prevent flex items from overflowing */
+}
+
+.scc-middle-column {
+    display: flex;
+    align-items: center; /* Vertically center the switch button */
+    justify-content: center;
+    flex-shrink: 0; /* Prevent middle column from shrinking */
+}
+
+.scc-switch-button {
+    font-size: 24px;
+    padding: 10px;
+    line-height: 1;
+    min-width: auto; /* Let the icon define the width */
+    background-color: #4a4a4c; /* Darker button for utility */
+}
+
+.scc-switch-button:hover {
+    background-color: #5a5a5c;
+}
+
+.scc-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.scc-form-group.scc-checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px; /* Space between checkbox and label */
+}
+
+.scc-form-group.scc-checkbox-group input[type="checkbox"] {
+    margin: 0;
+}
+
+.scc-form-group label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #c7c7cc; /* Lighter grey for labels */
+}
+
+.scc-input, .scc-textarea {
+    background-color: #000000 !important; /* Ensure black background */
+    color: #ffffff !important;           /* Ensure white text */
+    border: 1px solid #4a4a4c;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+}
+
+.scc-textarea {
+    resize: vertical;
+    min-height: 150px; /* Minimum height for text areas */
+    flex-grow: 1; /* Allow textarea to grow within its column */
+}
+
+/* Ensure input and output areas take up available vertical space */
+.scc-left-column .scc-input-area,
+.scc-right-column .scc-output-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.scc-output-pre {
+    background-color: #252527; /* Lightened background for consistency and better contrast */
+    border: 1px solid #4a4a4c;
+    border-radius: 6px;
+    padding: 10px 12px;
+    overflow: auto; /* Scroll for long content */
+    font-size: 13px;
+    line-height: 1.45;
+    flex-grow: 1; /* Allow pre to grow */
+    margin: 0; /* Reset default pre margin */
+    min-height: 150px; /* Match textarea min-height for balance */
+    color: #ffffff; /* Base text color for output pre area */
+}
+
+.scc-output-pre code {
+    white-space: pre-wrap; /* Wrap long lines but preserve formatting */
+    word-break: break-all; /* Break long words if necessary */
+    font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+    color: #ffffff; /* Ensure base code text is white */
+}
+
+.scc-button {
+    background-color: #0a84ff; /* iOS blue */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.scc-button:hover {
+    background-color: #359aff; /* Lighter blue on hover */
+}
+
+/* Removed empty .scc-button-primary to fix lint error 2e66534e-1c8e-499a-80b9-9f0b4d4b49ec */
+
+.scc-output-actions {
+    display: flex;
+    justify-content: flex-end; /* Align copy button to the right */
+    margin-top: 10px; /* Space above copy button */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.scc-global-actions {
+    display: flex;
+    flex-direction: column; /* Stack button and validation */
+    align-items: stretch; /* Make button full width */
+    gap: 10px;
+    margin-top: 15px;
+    border-top: 1px solid #4a4a4c;
+    padding-top: 15px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.scc-validation {
+    font-size: 13px;
+    text-align: center;
+    min-height: 18px; /* Reserve space to prevent layout shifts */
+}
+
+.scc-validation-error {
+    color: #ff453a; /* iOS destructive red */
+}
+
+.scc-validation-success {
+    color: #30d158; /* iOS green */
+}
+
+/* Make sure the pre background is consistent */
+pre[class*="language-"] {
+    background-color: #252527 !important; /* Updated to match .scc-output-pre */
+    /* Base text color for code inside is handled by .scc-output-pre code */
+}
+
+/* Highly specific override for the raw SQL input textarea if the above isn't enough */
+#scc-raw-sql-input {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.scc-input:focus, .scc-textarea:focus {
+    border-color: #007aff; /* iOS blue for focus */
+}
+
+/* Remove Prism.js specific styles as it's no longer used */

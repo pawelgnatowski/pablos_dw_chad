@@ -1,0 +1,707 @@
+/* General styles for injected UI elements */
+
+.pdwc-draggable-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  z-index: 9999999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  user-select: none;
+  font-family: sans-serif; /* Basic font */
+}
+
+.pdwc-draggable-icon:active {
+  cursor: grabbing;
+}
+
+.pdwc-tool-menu {
+  position: fixed;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 10000;
+  padding: 5px 0;
+  min-width: 180px; /* Increased min-width */
+  font-family: sans-serif;
+}
+
+.pdwc-tool-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pdwc-tool-menu li button {
+  display: flex; /* For icon and text alignment */
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px; /* Increased padding */
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  gap: 8px; /* Space between icon and text */
+}
+
+.pdwc-tool-menu li button:hover {
+  background-color: #f0f0f0;
+}
+
+.pdwc-tool-menu li button i {
+  width: 1.2em; /* Give icon some space */
+}
+
+/* Super Search Modal Styles */
+.pdwc-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 10001;
+  min-width: 500px; /* Increased min-width */
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column; /* Allow header, content, footer stacking */
+  font-family: sans-serif;
+}
+
+.pdwc-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.pdwc-modal-header h2 {
+  margin: 0;
+  font-size: 1.5em; /* Increased font size */
+}
+
+.pdwc-modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8em; /* Increased font size */
+  cursor: pointer;
+  padding: 0 5px;
+  color: #343a40;
+}
+
+.pdwc-super-search-controls {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.pdwc-form-group {
+  margin-bottom: 12px;
+}
+
+.pdwc-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.pdwc-form-group input[type="text"],
+.pdwc-form-group input[type="search"] {
+  width: calc(100% - 22px); /* Adjust for padding and border */
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.pdwc-form-group input[type="radio"],
+.pdwc-form-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.pdwc-form-group label input[type="radio"],
+.pdwc-form-group label input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+.pdwc-form-group label span {
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.pdwc-super-search-results {
+  flex-grow: 1; /* Allows this area to expand */
+  overflow-y: auto; /* Scroll for many results */
+  min-height: 100px; /* Ensure it has some height even if empty */
+  padding: 5px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.pdwc-results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pdwc-search-result-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.pdwc-search-result-item:last-child {
+  border-bottom: none;
+}
+
+.pdwc-search-result-item:hover {
+  background-color: #e9e9e9;
+}
+
+.pdwc-result-id {
+  color: #555;
+  font-size: 0.9em;
+  margin-left: 5px;
+}
+
+.pdwc-result-snippet {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 5px;
+  padding-left: 10px;
+  border-left: 2px solid #007bff;
+}
+
+.pdwc-result-snippet strong,
+.pdwc-search-result-item span strong {
+  background-color: yellow;
+  font-weight: bold; /* Ensure it's bold even if parent is not */
+}
+
+.pdwc-super-search-detail-view {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  border-top: 1px solid #eee; /* Add a separator */
+}
+
+.pdwc-back-button {
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.pdwc-back-button:hover {
+  background-color: #5a6268;
+}
+
+.pdwc-back-button i {
+  margin-right: 5px;
+}
+
+.pdwc-detail-property {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.pdwc-detail-property strong {
+  color: #333;
+}
+
+.pdwc-property-value {
+  margin-left: 5px;
+  word-break: break-all; /* Break long strings like IDs or config */
+}
+
+.pdwc-property-value pre {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto; /* Scroll for very long JSON */
+  max-height: 200px; /* Prevent pre from taking too much space */
+}
+
+.pdwc-copy-btn,
+.pdwc-special-copy-btn {
+  margin-left: 10px;
+  padding: 3px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  vertical-align: middle; /* Align with text */
+}
+
+.pdwc-copy-btn:hover,
+.pdwc-special-copy-btn:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+.pdwc-copy-btn i,
+.pdwc-special-copy-btn i {
+  margin-right: 4px;
+}
+
+.pdwc-copy-btn-structure {
+  background-color: #e6f7ff; /* Light blue */
+  border-color: #91d5ff;
+}
+
+.pdwc-copy-btn-structure:hover {
+  background-color: #bae7ff;
+}
+
+.pdwc-copy-btn-mapping {
+  background-color: #f6ffed; /* Light green */
+  border-color: #b7eb8f;
+}
+
+.pdwc-copy-btn-mapping:hover {
+  background-color: #d9f7be;
+}
+
+.pdwc-related-items-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.pdwc-related-items-list li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.pdwc-related-items-list li:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.pdwc-clickable-parent-set {
+  cursor: pointer;
+  color: #007bff;
+  display: block; /* Make it block for easier clicking */
+  margin-top: 5px;
+}
+
+.pdwc-clickable-parent-set:hover {
+  text-decoration: underline;
+}
+
+/* General Tool Styles (should apply to all tools like Context, Super Search etc.) */
+.pdwc-tool-header {
+  display: flex;
+  justify-content: space-between; /* Pushes title and close button to opposite ends */
+  align-items: center; /* Vertically aligns items in the header */
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.pdwc-tool-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em; /* Makes the '×' character larger */
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  padding: 0 5px; /* Minimal padding */
+  line-height: 1; /* Ensure it doesn't take too much vertical space */
+}
+
+.pdwc-tool-close-button:hover {
+  color: #333;
+}
+
+.pdwc-tool-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.pdwc-tool-button:hover {
+  background-color: #0056b3;
+}
+
+.pdwc-tool-button:disabled {
+  background-color: #007bff; /* Keep same color or slightly faded */
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* Main plugin container */
+#pdwc-super-search-container {
+  width: 350px; /* Default width */
+  max-width: 90vw; /* Max width relative to viewport */
+  height: 600px; /* Default height */
+  max-height: 80vh; /* Max height relative to viewport */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  resize: both; /* Allow resizing */
+  overflow: hidden; /* Prevent content from spilling during resize */
+  position: fixed; /* Or absolute, depending on desired behavior relative to viewport/page */
+  top: 20px; /* Default position */
+  right: 20px; /* Default position */
+  z-index: 9999999; /* Ensure it's on top */
+}
+
+/* Style for when the container is being dragged */
+#pdwc-super-search-container:active {
+  cursor: grabbing;
+}
+
+/* FontAwesome basic spinner for loading states */
+.fa-spinner.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add more styles as needed */
+
+.pdwc-toast.pdwc-toast-success {
+  background-color: #28a745;
+}
+
+/* Styles for hover tool icons associated with pdwc-draggable-icon */
+.pdwc-draggable-icon .pdwc-tool-icons-wrapper {
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position above the main icon with a small gap */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(50, 50, 50, 0.9); /* Semi-transparent dark background */
+  border-radius: 8px;
+  padding: 8px;
+  display: flex; /* Managed by JS, but good for CSS understanding */
+  gap: 8px; /* Space between icons */
+  z-index: 1; /* Stacking within the draggable icon context */
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15); /* Subtle shadow above */
+  /* visibility and opacity can be used for smooth transitions if display:none is too abrupt */
+}
+
+/* Individual tool icon styling */
+.pdwc-draggable-icon .pdwc-tool-icon {
+  width: 36px; /* Slightly smaller than main icon (40px) */
+  height: 36px;
+  background-color: #007bff; /* Consistent with main icon or a distinct color */
+  color: white;
+  border-radius: 50%; /* Circular icons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px; /* Adjust icon size if needed */
+  transition: background-color 0.2s ease;
+}
+
+.pdwc-draggable-icon .pdwc-tool-icon:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Set Truncation Tool Styles */
+#pdwc-set-truncation-tool {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  width: 350px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#pdwc-set-truncation-tool select,
+#pdwc-set-truncation-tool button {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#pdwc-set-truncation-tool select:disabled,
+#pdwc-set-truncation-tool button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#pdwc-set-truncation-tool button.pdwc-tool-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+#pdwc-set-truncation-tool button.pdwc-tool-button:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+#pdwc-set-truncation-tool .pdwc-tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#pdwc-set-truncation-tool .pdwc-tool-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 0 5px;
+  line-height: 1;
+}
+
+#pdwc-set-truncation-tool .pdwc-tool-close-button:hover {
+  color: #343a40;
+}
+
+/* Tool icon styles */
+.pdwc-tool-icon.pdwc-truncate-button {
+  color: #dc3545; /* Red color for the trash icon */
+}
+
+.pdwc-tool-icon.pdwc-truncate-button:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Ensure Font Awesome icons within tool icons are centered and sized well */
+.pdwc-draggable-icon .pdwc-tool-icon i.fas {
+  line-height: 1; /* Helps with vertical alignment for some FA icons */
+}
+
+/* Deployed Apps Tool Styles */
+#pdwc-deployed-apps-tool {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  width: 600px; 
+  max-height: 70vh; 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 10002; /* Ensure it's above most other elements */
+  display: flex; 
+  flex-direction: column;
+  font-family: sans-serif; 
+}
+
+/* .pdwc-tool-header and .pdwc-tool-close-button should be covered by existing styles if consistent */
+
+.pdwc-last-updated {
+  padding: 5px 10px;
+  font-size: 0.8em;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  text-align: right;
+}
+
+.pdwc-apps-table-container {
+  flex-grow: 1; /* Allows this area to expand and fill available space */
+  overflow-y: auto; /* Enables vertical scrolling for the table content */
+  padding: 10px;
+}
+
+.pdwc-apps-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.pdwc-apps-table th,
+.pdwc-apps-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top; /* Align content to the top for cells with multiple lines */
+}
+
+.pdwc-apps-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  position: sticky; /* If the container scrolls, header stays */
+  top: 0; /* Required for sticky */
+  z-index: 1; /* Ensure header is above table content during scroll */
+}
+
+.pdwc-apps-table td a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.pdwc-apps-table td a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure the main tool panel itself doesn't scroll if the table container does */
+#pdwc-deployed-apps-tool.pdwc-tool-panel {
+    overflow: hidden; /* Prevent the main panel from showing scrollbars */
+}
+
+/* Context Retrieval Tool Specific Styles */
+/* Ensure this .pdwc-context-tool class is what's used in ContextRetrievalTool.ts */
+.pdwc-context-tool {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 60vw;
+  max-width: 90vw;
+  height: 80vh;
+  max-height: 95vh;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdwc-context-button-container {
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+  background-color: #efefef;
+  flex-shrink: 0;
+}
+
+.pdwc-tool-button {
+  margin: 5px;
+  padding: 8px 15px;
+}
+
+.pdwc-context-content-area {
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 0.85em;
+  min-height: 65vh;
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 10px 0;
+  padding: 15px;
+  background-color: #f9f9f9;
+  color: #333;
+  white-space: pre;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/* Jinja Checkbox specific styles in Context Retrieval Tool */
+.pdwc-jinja-checkbox-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f8f9fa;
+}
+
+#pdwc-jinja-checkbox {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.pdwc-jinja-checkbox-container label {
+  font-size: 0.9em;
+  color: #333;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* Styles for Context Retrieval Tool Mode Selector */
+.pdwc-context-mode-selector {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f0f0f0;
+}
+
+.pdwc-context-mode-selector label {
+  margin-right: 20px;
+  font-size: 0.9em;
+  color: #333;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pdwc-context-mode-selector input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Styles for Custom Context Text Area in Context Retrieval Tool */
+.pdwc-custom-context-textarea {
+  min-height: 65vh;
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 10px 0;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 0.85em;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  display: none;
+}
+
+/* Any other generic styles like .pdwc-tool-footer (if still used by other tools */
+
+/* Tooltip Styles for PDWC Tools */
